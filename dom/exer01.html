@@ -17,15 +17,16 @@
         }
     </style>
     <script>
-        function mudarMensagem() {
-            var caixa = document.querySelector('div');
-            caixa.style.backgroundColor('yellow'); 
+        function clicar() {
+            var caixa = window.document.querySelector('div');
+            caixa.innerText = 'Olá mundo!'
+            caixa.style.backgroundColor = 'yellow'; 
         }
     </script>
 </head>
 <body>
     <h1>Primeiros passos com o DOM</h1>
-    <div onclick="mudarMensagem()">
+    <div onclick="clicar()">
         <p>Clique em mim</p>
     </div>
 </body>
