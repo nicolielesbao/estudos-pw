@@ -3,31 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Object Model</title>
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        div{
-            width: 200px;
-            height: 150px;
-            background-color: aqua;
-            padding: 50px;
-            cursor: pointer;
-        }
-    </style>
+    <title>DOM</title>
     <script>
-        function clicar() {
-            var caixa = window.document.querySelector('div');
-            caixa.innerText = 'Olá mundo!'
-            caixa.style.backgroundColor = 'yellow'; 
+        function definirCores() {
+            var paragrafos = document.getElementsByTagName("p");
+            var cores = ["blue" , "red", "Yellow" , "green"];
+            for (var i = 0; i < paragrafos.length; i++){
+                paragrafos[i].style.backgroundColor = cores[i];
+            }
         }
     </script>
 </head>
 <body>
-    <h1>Primeiros passos com o DOM</h1>
-    <div onclick="clicar()">
-        <p>Clique em mim</p>
-    </div>
+    <h1 id="d_h1" class="class_h1">Mundo Mágico do Javascript</h1>
+    <p id="p1" class="p">Corvinal</p>
+    <p id="p2" class="p">Grifinória</p>
+    <p id="p3" class="p">Sonserina</p>
+    <p id="p4" class="p">Lufa-Lufa</p>
+    <button type="button" id="definir" onclick="definirCores()">Definir cores</button>
 </body>
 </html>
