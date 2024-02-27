@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão</title>
+</head>
+<body>
+    <button>Click</button>
+    <script>
+        const button = document.querySelector('button');
+        let cont = 0;
+
+        function func() {
+            if (cont == 0) {
+                button.innerHTML = 'Fui clicado';
+            }
+            if (cont == 1) {
+                button.innerHTML = 'Fui clicado de novo';
+            }
+            while (cont != 0 && cont != 1) {
+                if (cont) {
+                    button.innerHTML = ` Fui clicado pela ${cont}º vez `
+                }
+            }
+            
+            cont++;
+        }
+        button.addEventListener('click',func);
+    </script>
+</body>
+</html>

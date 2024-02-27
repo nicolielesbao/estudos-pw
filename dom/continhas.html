@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vamos multiplicar?</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            padding: 10px;
+        }
+        input{
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>multiplicadora</h1>
+    <input type="number" name="numero1" id="numero1">
+    <span>X</span>
+    <input type="number" name="numero2" id="numero2">
+    <span>=</span>
+    <span id="resultado"></span>
+
+    <script>
+        const numero1 = document.getElementById('numero1');
+        const numero2 = document.getElementById('numero2');
+        const caixa = document.querySelector('#resultado');
+
+        function mult() {
+            const n1 = Number(numero1.value);
+            const n2 = Number(numero2.value);
+            const res = n1 * n2;
+            caixa.innerHTML = res;
+        }
+        
+        numero1.addEventListener('input',mult);
+        numero2.addEventListener('input',mult);
+    </script>
+</body>
+</html>
