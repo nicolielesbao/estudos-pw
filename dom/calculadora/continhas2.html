@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="minhacalculadora.js"></script>
+    <link rel="stylesheet" href= "continhas.css">
+</head>
+<body>
+    <header>
+        <h1>Quatro Operações da Matemática</h1>
+    </header>
+
+    <div class="container">
+        <div class="conteudo">
+            <h2>Multiplicação</h2>
+            <input type="number" name="n1" id="n1">
+            <span>X</span>
+            <input type="number" name="n2" id="n2">
+            <span>=</span>
+            <span id="res"></span>
+        </div>
+        <button type="button" onclick="mult()">Multiplicar</button>
+    </div>
+    
+    <div class="container">
+        <div class="conteudo">
+            <h2>Divisão</h2>
+            <input type="number" name="n3" id="n3">
+            <span>/</span>
+            <input type="number" name="n4" id="n4">
+            <span>=</span>
+            <span id="res2"></span>
+        </div>
+        <button type="button" onclick="divid()">Dividir</button>
+    </div>
+
+    <div class="container">
+        <div class="conteudo">
+            <h2>Soma</h2>
+            <input type="number" name="n5" id="n5">
+            <span>+</span>
+            <input type="number" name="n6" id="n6">
+            <span>=</span>
+            <span id="res3"></span>
+        </div>
+        <button type="button" onclick="soma()">Soma</button>
+    </div>
+
+    <div class="container">
+        <div class="conteudo">
+            <h2>Soma</h2>
+            <input type="number" name="n7" id="n7">
+            <span>-</span>
+            <input type="number" name="n8" id="n8">
+            <span>=</span>
+            <span id="res4"></span>
+        </div>
+        <button type="button" onclick="subt()">Subtrair</button>
+    </div>
+</body>
+</html>
