@@ -12,22 +12,58 @@
     width: 45%;
 }
 
+:root{ 
+    --fonte1: "Rubik Mono One", monospace;
+    --fonte2: Arial, Helvetica, sans-serif;
+    --cor0: #ffffff;
+    --cor1: #6A33AB;
+    --cor2: #7e57aa;
+    --cor3: #334BAB;
+    --cor4: #727ead;
+    --cor5: #AB3394;
+    --cor6: #a65396;
+}
+
+body{
+    background-color: var(--cor4);
+}
+
+header{
+    background-image: linear-gradient(var(--cor3),var(--cor1));
+    padding: 10px;
+}
+
 h1{
     text-align: center;
-    padding: 10px;
-    font-family: "Rubik Mono One", monospace;
+    font-family: var(--fonte1);
     font-weight: 400;
     font-style: normal;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.576);
+    color: var(--cor5);
 }
 
 h2{
     padding-bottom: 10px;
+    font-family: var(--fonte2);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.576);
+    color: var(--cor6);
+}
+
+main{
+    background-color: var(--cor2);
+    min-width: 300px;
+    width: 40%;
+    height: 91.5vh;
+    margin: auto;
+    padding-bottom: 25px;
 }
 
 input{
     width: 40px;
     height: 30px;
     text-align: center;
+    border-radius: 5px;
+    border: solid 2px var(--cor4);
 }
 
 .conteudo{
@@ -39,4 +75,15 @@ button{
     display: block;
     margin: auto;
     padding: 5px;
+    border-radius: 5px;
+    border: solid 1px var(--cor4);
+    background-color: var(--cor3);
+    color: var(--cor4);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #727ead;
+    color: var(--cor3)
 }
