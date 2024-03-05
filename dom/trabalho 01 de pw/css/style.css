@@ -57,11 +57,12 @@ div.campo label {
 }
 
 div#incorreto {
-    color: rgb(180, 34, 34);
+    color: rgb(255, 94, 94);
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 12px;
+    text-align: center;
     padding: 5px;
 }
 

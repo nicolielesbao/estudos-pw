@@ -5,12 +5,20 @@
         var usuario = document.querySelector('#usuario').value;
         var senha = document.querySelector('#senha').value;
         var incorreto = document.querySelector('#incorreto');
-
-        usuario = usuario.toUpperCase();
-        senha = senha.toUpperCase();
         
-        while (usuario != "ALUNO" && senha != "undererere123" || usuario != "PROFESSOR" && senha != "admin789") {
-            return incorreto.innerHTML = 'Usuário ou senha incorretos'
+        while (usuario != "aluno" || usuario != "professor") {
+            incorreto.innerHTML = "Usuário ou senha incorretos";
+        }
+
+        if (usuario === "aluno") {
+            while (senha != "undererere123") {
+                incorreto.innerHTML = "Usuário ou senha incorretos";
+            }
+        }
+        if (usuario === "professor") {
+            while (senha != "admin789") {
+                incorreto.innerHTML = "Usuário ou senha incorretos";
+            } 
         }
 
     }
