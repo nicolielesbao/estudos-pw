@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.container{
+    background-color: #00ffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 31%;
+    border-radius: 15px;
+}
+
+header{
+    background-image: url(imagens/imagem-300px-removebg-preview\ .png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 55%;
+    margin-left: 20px;
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+div.login{
+    width: 45%;
+    margin: 15px;
+    padding: 10px;
+}
+
+div.titulo{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+
+div.campo > input{
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 10px 5px;
+    border: none;
+}
+
+div.campo label {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+}
+
+div#incorreto {
+    color: rgb(180, 34, 34);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    padding: 5px;
+}
+
+div.botao > button{
+    background-color: blueviolet;
+    color: aliceblue;
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+div.botao > button:hover {
+    background-color: rgb(162, 122, 199);
+    cursor: pointer;
+}
