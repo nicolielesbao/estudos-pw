@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios do Slide</title>
+</head>
+<body>
+    <!-- Exercício – Parte 2:
+            Use o array do exercício anterior.
+            Organize o array em ordem crescente.
+            Usando JS, insira o conteúdo do array em uma tabela HTML de 9x10. -->
+        <script>
+            const numeros=[];
+            for(let i=1;i<=100;i++){
+                const num = parseInt(Math.random()*1000);
+                numeros.push(num);
+            }
+            const numeros2=numeros.slice(5,-5);
+            console.log(numeros);
+            console.log(numeros2);
+            
+            numeros2.sort((a,b)=>a-b);
+            document.write(numeros2);
+            document.write("<table border='1'>");
+            let i=0;
+            for(let l=1;l<=9;l++){
+                document.write("<tr>");
+                for(let c=1;c<=10;c++){
+                    document.write("<td>");
+                    document.write(numeros2[i])
+                    document.write("</td>")
+                    i++;
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        </script> 
+</body>
+</html>

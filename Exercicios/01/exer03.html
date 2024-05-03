@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios do Slide</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        #box {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            font-family: sans-serif;
+            background-color: rgb(70, 70, 84);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 5px;
+            margin-top: 20vh;
+            margin-bottom: 20vh;
+        }
+
+        input {
+            margin-bottom: 10px;
+            outline: none;
+            box-sizing: border-box;
+            padding: 5px 15px;
+            border-radius: 3px;
+        }
+
+        button {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            height: 35px;
+            outline: none;
+            background-color: rgb(105, 201, 201);
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: 0.3s all;
+            cursor: pointer;
+        }
+
+        button:hover {
+            filter: brightness(1.2);
+        }
+
+        #resposta {
+            margin-bottom: 30px;
+        }
+
+        span {
+            font-weight: bold;
+            color: rgb(185, 215, 255);
+        }
+    </style>
+</head>
+<body>
+    <!-- Exercício 3:
+        Crie uma página com 4 caixas de texto, como no exemplo ao lado.
+        Ao clicar no botão, guarde todas informações do livro dentro de um objeto, e mostre a informação “Livro cadastrado com sucesso”.
+        Mostre as informações do livro abaixo. 
+    -->
+    <div id="box">
+        <h1>Cadastro de Livros</h1>
+        <span>Título</span>
+        <input id="titulo">
+        <span>Autor</span>
+        <input id="autor">
+        <span>Ano</span>
+        <input id="ano">
+        <span>Editora</span>
+        <input id="editora">
+        <button>CADASTRAR</button>
+        <div id="resposta"> </div>
+    </div>
+    <script>
+        const ano = document.querySelector('#ano');
+        const editora = document.querySelector('#editora');
+        const titulo = document.querySelector('#titulo');
+        const autor = document.querySelector('#autor');
+        const button = document.querySelector('button');
+        const resposta = document.querySelector('#resposta');
+
+        const book = {};
+
+        button.addEventListener('click', () => {
+            book.titulo = titulo.value;
+            book.ano = ano.value;
+            book.editora = editora.value;
+            book.autor = autor.value;
+
+            resposta.innerHTML = `
+            <h2>Livro cadastrado com sucesso.</h2>
+            O livro <span>${book.titulo}</span> foi publicado pela editora <span>${book.editora}</span> em <span>${book.ano}</span> e escrito por <span>${book.autor}</ span>`;
+        })
+    </script>
+</body>
+</html>

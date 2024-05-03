@@ -14,134 +14,15 @@
             Use slice para remover os números.
         Mostre o conteúdo do array no console. -->
 
-        <!-- Exercício – Parte 2:
-            Use o array do exercício anterior.
-            Organize o array em ordem crescente.
-            Usando JS, insira o conteúdo do array em uma tabela HTML de 9x10. -->
-        
-        <!-- Código do professor
         <script>
-            const numeros=[];
-            for(let i=1;i<=100;i++){
-                const num = parseInt(Math.random()*1000);
-                numeros.push(num);
+            const num_array = [];
+            for (var i = 0; i < 100; i++) {
+                aleatorio = parseInt(Math.random() * 1000);
+                num_array.push(aleatorio);
             }
-            const numeros2=numeros.slice(5,-5);
-            console.log(numeros);
-            console.log(numeros2);
-            
-            numeros2.sort((a,b)=>a-b);
-            document.write(numeros2);
-            document.write("<table border='1'>");
-            let i=0;
-            for(let l=1;l<=9;l++){
-                document.write("<tr>");
-                for(let c=1;c<=10;c++){
-                    document.write("<td>");
-                    document.write(numeros2[i])
-                    document.write("</td>")
-                    i++;
-                }
-                document.write("</tr>");
-            }
-            document.write("</table>");
-        
-        </script> -->
-
-        <!-- Exercício 3:
-        Crie uma página com 4 caixas de texto, como no exemplo ao lado.
-        Ao clicar no botão, guarde todas informações do livro dentro de um objeto, e mostre a informação “Livro cadastrado com sucesso”.
-        Mostre as informações do livro abaixo. -->
-
-        <!-- código do professor:
-        <style>
-            #box {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        font-family: sans-serif;
-        background-color: rgb(70, 70, 84);
-        color: white;
-        padding: 15px 35px;
-        border-radius: 5px;
-        }
-
-        input {
-            margin-bottom: 10px;
-            outline: none;
-            box-sizing: border-box;
-            padding: 5px 15px;
-            border-radius: 3px;
-        }
-
-        button {
-            margin-top: 15px;
-            margin-bottom: 20px;
-            height: 35px;
-            outline: none;
-            background-color: rgb(105, 201, 201);
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.3rem;
-            transition: 0.3s all;
-            cursor: pointer;
-        }
-
-        button:hover {
-            filter: brightness(1.2);
-        }
-
-        #resposta {
-            margin-bottom: 30px;
-        }
-
-        span {
-            font-weight: bold;
-            color: rgb(185, 215, 255);
-        }
-            </style>
-        </head>
-        <body>
-            <div id="box">
-                <h1>Cadastro de Livros</h1>
-                <span>Título</span>
-                <input id="titulo">
-                <span>Autor</span>
-                <input id="autor">
-                <span>Ano</span>
-                <input id="ano">
-                <span>Editora</span>
-                <input id="editora">
-                <button>CADASTRAR</button>
-                <div id="resposta"> </div>
-            </div>
-               <script>
-                   const ano = document.querySelector('#ano');
-                    const editora = document.querySelector('#editora');
-                    const titulo = document.querySelector('#titulo');
-                    const autor = document.querySelector('#autor');
-                    const button = document.querySelector('button');
-                    const resposta = document.querySelector('#resposta');
-            
-                    const book = {};
-            
-                    button.addEventListener('click', () => {
-                        book.titulo = titulo.value;
-                        book.ano = ano.value;
-                        book.editora = editora.value;
-                        book.autor = autor.value;
-        
-                        resposta.innerHTML = `
-                        <h2>Livro cadastrado com sucesso.</h2>
-                        O livro <span>${book.titulo}</span> foi publicado pela editora <span>${book.editora}</span> em <span>${book.ano}</span> e escrito por <span>${book.autor}</ span>`;
-                    })
-                </script> -->
-
-                <!-- Exercício:
-                    Crie uma página com duas caixas de texto e dois botões, para o cadastro de carros e suas placas.
-                    Ao clicar em INSERIR, o par de informações das caixas de texto devem ser inseridas em um array de objetos com os campos modelo e placa.
-                    Ao clicar no botão REMOVER, o primeiro elemento da lista deve ser removido. Use a função shift ou slice.
-                    A lista mostrada no documento deve ser atualizada a cada inserção e remoção. -->
+            console.log(num_array);
+            const remover = num_array.slice(5,-5);
+            console.log(remover);
+        </script>
 </body>
 </html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Carros</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        background-color: #0048b3;
+        max-width: 230px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    .form-group {
+        margin-bottom: 10px;
+    }
+    span{
+        color: #fff;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border-radius: 7px;
+    }
+    button {
+        padding: 8px 20px;
+        width: 49%;
+        background-color: #283747;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #2837479a;
+    }
+    table{
+        border: 2px dotted #fff;
+        width: 100%;
+        margin-top: 10px;
+        color: #fff;
+    }
+    thead th {
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-group">
+        <span>Modelo</span>
+        <input type="text" id="modelo">
+    </div>
+    <div class="form-group">
+        <span>Placa</span>
+        <input type="text" id="placa">
+    </div>
+    <button onclick="inserirCarro()">INSERIR</button>
+    <button onclick="removerCarro()">REMOVER</button>
+
+    <table>
+        <thead>
+            <th>Carro</th>
+            <th>Placa</th>
+        </thead>
+        <tbody id="tbody">
+            <!-- Essa parte será preenchida de forma dinamica com o JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    let carros = [];
+
+    function inserirCarro() {
+        const modelo = document.getElementById('modelo').value;
+        const placa = document.getElementById('placa').value;
+        if (modelo && placa) {
+            carros.push({ modelo, placa });
+            atualizarListaCarros();
+            limparCampos();
+        } else {
+            alert('Por favor, preencha todos os campos.');
+        }
+    }
+
+    function removerCarro() {
+        if (carros.length > 0) {
+            carros.shift();
+            atualizarListaCarros();
+        } else {
+            alert('Não há carros para remover.');
+        }
+    }
+
+    function atualizarListaCarros() {
+        let tbody = document.getElementById('tbody');
+        tbody.innerHTML = "";
+
+        for(let i = 0; i < carros.length; i++){
+            let tr = tbody.insertRow();
+
+            let td_modelo = tr.insertCell();
+            let td_placa = tr.insertCell();
+
+            td_modelo.innerHTML = carros[i].modelo;
+            td_placa.innerHTML = carros[i].placa;
+        }
+    }
+
+    function limparCampos() {
+        document.getElementById('modelo').value = '';
+        document.getElementById('placa').value = '';
+    }
+</script>
+
+</body>
+</html>
