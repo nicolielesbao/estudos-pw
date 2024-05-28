@@ -4,7 +4,7 @@
 
     function logar() {
         var caixaLogin = document.querySelector('.container');
-        var usuario = document.querySelector('#usuario').value;
+        var usuario = document.querySelector('#usuario').value; console.log(usuario);
         var senha = document.querySelector('#senha').value;
         var incorreto = document.querySelector('#incorreto');
         var mensagem = document.querySelector('.mensagem');
