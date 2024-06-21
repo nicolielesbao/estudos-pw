@@ -1,12 +1,28 @@
-//Aqui entra o JavaScript, para que a calculadora funcione, faremos o uso do DOM.
-//Vamos usar o impute e os botões, então:
+const visor = document.getElementById('visor');
+let mostrar = "";
 
-const pVisor = document.querySelector('#visor');
-const btn = document.querySelectorAll('button');
+function numeros(num) {
+    mostrar = num;
+    visor.innerText += mostrar;
+}
 
-for(let i = 0; i <= btn.length; i++){
-    btn[i].addEventListener('click', ()=>{
-        let numero = pVisor.innerHTML = btn[i].value;
-        pVisor.innerHTML = numero;
-    })
+function operar(oper) {
+    mostrar = oper;
+    visor.innerText += mostrar;
+}
+
+function limpar() {
+    visor.innerHTML = "";
+}
+
+function apagar() {
+    let removUltimo = document.getElementById('visor').innerHTML;
+    document.getElementById('visor').innerHTML = removUltimo.slice(0,-1);
+}
+
+function calcular() {
+    let result = document.getElementById('visor').innerHTML;
+    if (result) {
+        document.getElementById('visor').innerHTML = eval(result);
+    }
 }

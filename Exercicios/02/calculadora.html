@@ -13,32 +13,32 @@
         <p id="visor"></p> <!-- Lugar onde se visualiza as contas e os resultados ex. 10 + 7 -->
         <div class="container_btn">                
             <div class="linhas">
-                <button id="limparTudo">C</button>
-                <button id="apagar">&#60;</button>
-                <button value="/">/</button>
-                <button value="X">X</button>
+                <button id="limparTudo" onclick="limpar()">C</button>
+                <button id="apagar" onclick="apagar()">&#60;</button>
+                <button id="operador" onclick="operar('/')">/</button>
+                <button id="operador" onclick="operar('*')">X</button>
             </div>
             <div class="linhas">
-                <button value="7">7</button>
-                <button value="8">8</button>
-                <button value="9">9</button>
-                <button value="-">-</button>
+                <button id="numero" onclick="numeros('7')">7</button>
+                <button id="numero" onclick="numeros('8')">8</button>
+                <button id="numero" onclick="numeros('9')">9</button>
+                <button id="operador" onclick="operar('-')">-</button>
             </div>
             <div class="linhas">
-                <button value="4">4</button>
-                <button value="5">5</button>
-                <button value="6">6</button>
-                <button value="+">+</button>
+                <button id="numero" onclick="numeros('4')">4</button>
+                <button id="numero" onclick="numeros('5')">5</button>
+                <button id="numero" onclick="numeros('6')">6</button>
+                <button id="operador" onclick="operar('+')">+</button>
             </div>
             <div class="linhas">
-                <button value="1">1</button>
-                <button value="2">2</button>
-                <button value="3">3</button>
-                <button id="resultado">=</button>
+                <button id="numero" onclick="numeros('1')">1</button>
+                <button id="numero" onclick="numeros('2')">2</button>
+                <button id="numero" onclick="numeros('3')">3</button>
+                <button id="resultado" onclick="calcular()">=</button>
             </div>
             <div class="linhas">
-                <button value="0" class="especial">0</button>
-                <button value=".">.</button>
+                <button id="numero" onclick="numeros('0')" class="especial">0</button>
+                <button onclick="numeros('.')">.</button>
             </div>
         </div>
     </div>    
