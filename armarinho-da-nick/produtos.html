@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de produtos</title>
+</head>
+<body>
+    <div class="register-box">
+        <h2>Novo produto</h2>
+        <form id="product-form">
+            <div class="input-container">
+                <label for="nomeProduto">Nome do Produto</label>
+                <input type="text" name="nomeProduto" id="nomeProduto" placeholder="Digite o nome do produto" required>
+            </div>
+            <div class="input-container">
+                <label for="preco">Preço</label>
+                <input type="number" name="preco" id="preco" placeholder="Digite o preço" step="0.01" required>
+            </div>
+            <div class="input-container">
+                <label for="descricao">Descrição</label>
+                <textarea name="descricao" id="descricao" placeholder="Digite a descrição do produto" rows="3" required></textarea>
+            </div>
+            <div class="input-container categoria">
+                <label for="categoria">Categoria</label>
+                <select name="categoria" id="categoria" required>
+                    <option value="" disabled selected>Escolha...</option>
+                    <option value="1">Linhas e Fios</option>
+                    <option value="2">Agulhas e Costura</option>
+                    <option value="3">Papelaria</option>
+                    <option value="4">Peças Prontas</option>
+                </select>
+            </div>
+            <div class="input-container quantidade">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" name="quantidade" id="quantidade" placeholder="0" min="1" required>
+            </div>
+            <div class="input-container">
+                <button type="submit" class="submit-button">Cadastrar Produto</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

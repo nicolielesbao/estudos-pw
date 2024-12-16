@@ -1,0 +1,205 @@
+:root {
+    --cor01: rgb(228, 187, 255);
+    --cor02: rgb(159, 105, 196);
+    --cor03: rgb(99, 92, 42);
+    --cor04: rgba(99, 92, 42, 0.6);
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cor04);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cor03);
+    border-radius: 10px;
+    border: 3px solid var(--cor03);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor01);
+    width: 100%;
+    height: 110px;
+    padding: 1.5rem;
+}
+
+h1, h2 {
+    text-align: center;
+    color: var(--cor03);
+    padding: 5px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    color: var(--cor03);
+}
+
+.logo > a {
+    text-decoration: none;
+}
+
+.logo > img {
+    max-width: 90px;
+    border: solid 2px var(--cor03);
+    border-radius: 50%;
+}
+
+.user-navigation {
+    width: 30%;
+}
+
+.user-navigation > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-navigation > ul > li{
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.user {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+#nomeUser {
+    text-decoration: none;
+    color: var(--cor03);
+    font-weight: bolder;
+    padding-left: 5px;
+}
+
+.option-nav {
+    width: 98%;
+    padding: 1rem;
+    background-color: var(--cor01);
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+.option-nav > ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.option-nav ul li{
+    list-style-type: none;
+}
+
+.option-nav > ul > li > a {
+    text-decoration: none;
+    color: var(--cor03);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.option-nav > ul > li > a:hover {
+    color: var(--cor02);
+}
+
+/*Divs que contém as informações do produto*/
+.card-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 900px;
+    transition: transform 0.5s ease-in-out;
+    padding: 10px;
+}
+
+.cartoes{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--cor01);
+    cursor: pointer;
+}
+
+.card-produt {
+    flex: 200px;
+    border: var(--cor03) solid 2px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    margin: 5px;
+}
+
+.img-produt {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-produt img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.img-produt {
+    width: 100%;
+    background-color: var(--cor02);
+    margin: auto;
+}
+
+.img-produt > img {
+    width: 100%;
+    height: 30vh;
+}
+
+.card-produt h3, #preco {
+    padding: 7px;
+    color: var(--cor03);
+}
+
+.card-produt .comprar {
+    width: 95%;
+    display: block;
+    margin: auto;
+    margin: 5px;
+    padding: 7px;
+    border: none;
+    background-color: var(--cor02);
+    border-radius: 7px;
+    color: var(--cor01);
+    cursor: pointer;
+}
+
+.card-produt .comprar:hover {
+    background-color: var(--cor01);
+    color: var(--cor03);
+}
