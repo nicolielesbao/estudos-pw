@@ -67,13 +67,34 @@ produtList.forEach((item, index) => {
     `;
 });
 
-// Após todos os produtos serem inseridos, agora adiciona o evento para os botões
+// carrinho de compras
 document.querySelectorAll('.comprar').forEach(botao => {
     botao.addEventListener('click', function() {
-        const r = confirm("Você precisa se logar para acessar esse recurso!\nDeseja fazer login?");
+        if (!sessionStorage.getItem('loggedUser')) {
+            const r = confirm("Você precisa se logar para acessar esse recurso!\nDeseja fazer login?");
 
-        if (r) {
-            location.href = 'login.html';
+            if (r) {
+                location.href = 'login.html';
+            } 
+        }else{
+            //Pega o índice do produto e recupera da lista
+            const index = botao.dataset.index;
+            const produto = { ...produtList[index] };
+
+            // Adiciona ou incrementa o produto no carrinho
+            const produtoExistente = loggedUser.cart.find(item => item.nome === produto.nome);
+            if (produtoExistente) {
+                produtoExistente.qtd += 1;
+            } else {
+                produto.qtd = 1;
+                loggedUser.cart.push(produto);
+            }
+
+            // Atualiza o `users` no localStorage
+            localStorage.setItem('users', JSON.stringify(users));
+
+            alert(`${produto.nome} foi adicionado ao seu carrinho!`);
+            console.log("Carrinho atual:", loggedUser.cart);
         }
     });
 });

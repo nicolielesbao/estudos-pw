@@ -91,6 +91,7 @@ btn.addEventListener('click', (e) => {
         email: email.value,
         senha: senha.value,
         foto: imagemCarregada, // Salva a imagem carregada no objeto
+        cart: [],
     };
 
     //console.log(user);
@@ -113,6 +114,7 @@ function save() {
         descricao: descricao.value,
         email: email.value,
         senha: senha.value,
+        cart: [],
     };
     sessionStorage.setItem('auto-save', JSON.stringify(user));
 }

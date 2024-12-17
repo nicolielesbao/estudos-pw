@@ -37,24 +37,112 @@
     font-family: "Open Sans", serif;
 }
 
-.container{
+/*Tudo do cabeçalho*/
+header {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor01);
+    width: 100%;
+    height: 110px;
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
 }
 
-h1, h2{
-    color: var(--cor03);
-    text-align: center;
+.menu-hamburguer {
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* As linhas */
+.menu-hamburguer span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: var(--cor03); 
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out; 
+}
+
+/*menuzinho de navegação canto superior direito*/
+.user-navigation, .user-navigation > nav {
+    display: flex;
+    width: 50%;
+    justify-content: right;
+}
+
+.user-navigation > nav > ul {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.user-navigation > nav > ul > li{
     font-size: 1.5rem;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+
+.user-navigation > nav > ul > li > a {
+    text-decoration: none;
+    color: var(--cor03);
+}
+
+.user-navigation > nav > ul > li > a.active{
+    color: var(--cor02);
+    border-bottom: solid 3px var(--cor02);
+    transition: boder-bottom 3s ease;
+}
+
+.user-navigation > nav > ul > li > button.btn-sidebar{
+    background-color: var(--cor01);
+    border: none;
+}
+
+h1, h2 {
+    text-align: center;
+    color: var(--cor03);
     padding: 5px;
+}
+
+/*Logo da marca canto superior esquerdo*/
+.logo {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    color: var(--cor03);
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo > img {
+    max-width: 90px;
+    border: solid 2px var(--cor03);
+    border-radius: 50%;
 }
 
 aside.sidebar {
     background-color: var(--cor01);
-    width: 25%;
+    width: 20%;
     height: 100vh;
     padding: 1.5rem;
-    position: sticky;
+    display: none;
+    position: fixed;
     top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+aside.sidebar > button.close-sidebar{
+    width: 45px;
 }
 
 #userDesc > p{
@@ -124,106 +212,38 @@ button#logout > a:hover, button#logout:hover{
     color: var(--cor03);
 }
 
-main{
-    width: 75%;
-    padding: 1.5rem;
-}
-
-section#hero{
+section#propaganda{
+    width: 100%;
+    height: 45vh;
+    background: var(--cor02) url(../img/banner.jpg) no-repeat center center/cover;
     display: flex;
     justify-content: center;
+    align-items: end;
+    padding: 2rem;
 }
 
-/*card*/
+section#propaganda > a{
+    padding: 1.5rem;
+    background-color: var(--cor01);
+    color: var(--cor02);
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+section#propaganda > a:hover{
+    background-color: var(--cor02);
+    color: var(--cor01);
+}
+
 #cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 17px;
     width: 95%;
+    transition: transform 0.5s ease-in-out;
     padding: 10px;
 }
 
-/* Estilo geral para os formulários */
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 400px;
-    max-width: 500px;
-    margin: 0 auto;
-    background: var(--cor01);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+section#editarDados{
+    display: none;
 }
-
-/* Títulos dos formulários */
-form h2 {
-    color: var(--cor03);
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-/* Rótulos e campos de entrada */
-form label {
-    color: var(--cor03);
-    font-size: 1.1rem;
-    text-align: left;
-    width: 100%;
-}
-
-form input, form textarea, form select {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid var(--cor03);
-    border-radius: 5px;
-    background: #fff;
-    color: var(--cor03);
-    transition: border-color 0.3s;
-}
-
-form input:focus, form textarea:focus, form select:focus {
-    border-color: var(--cor03);
-    outline: none;
-    box-shadow: 0 0 5px rgba(167, 111, 204, 0.5);
-}
-
-/* Botões */
-form button {
-    background-color: var(--cor03);
-    color: var(--cor01);
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-form button:hover {
-    background-color: var(--cor01);
-    color: var(--cor03);
-    transform: scale(1.05);
-}
-
-/* Campos de upload de imagem */
-form input[type="file"] {
-    padding: 5px;
-    background-color: #fff;
-    border: 1px dashed var(--cor03);
-    cursor: pointer;
-}
-
-/* Responsividade */
-@media screen and (max-width: 768px) {
-    form {
-        width: 90%;
-    }
-    form h2 {
-        font-size: 1.5rem;
-    }
-}
-
